@@ -24,7 +24,7 @@ Finally, open the file server.py in a text editor and insert your API keys in th
     python3 server.py
 
 ## TRY CHATTING WITH GPT3
-
+    /auth - Login to Bot to get access to chating
     /start - Start listening and answering to messages
     /stop - Stop listening and answering to messages
     /clear - History clearing and starting over
