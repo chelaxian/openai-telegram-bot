@@ -24,7 +24,9 @@ Finally, open the file server.py in a text editor and insert your API keys in th
 
 ## TRY CHATTING WITH GPT3
 
-    /hello
+    /start - Start listening and answering to messages
+    /stop - Stop listening and answering to messages
+    /clear - History clearing and starting over
 
-
-    /ask write a tweet about why is important to have work-life-balance
+Example:    
+write a tweet about why is important to have work-life-balance
