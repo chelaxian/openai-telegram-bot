@@ -16,8 +16,9 @@ Next, go to https://beta.openai.com/account/api-keys and create a new secret key
 
 ## CHANGE A CODE USING THESE ACCESS keys
 Finally, open the file server.py in a text editor and insert your API keys in the designated places:
- - line 22 and 39 - open api key between " "
- - line 40 - telegram token between " "
+ - line 7 - open api key between " "
+ - line 10 - telegram token between " "
+ - line 15 - your auth password " "
 
 ## RUN server.py on your server
     python3 server.py
