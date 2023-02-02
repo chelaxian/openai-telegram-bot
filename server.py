@@ -1,32 +1,52 @@
 import openai
+import telegram
 from telegram import Update
-from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
+from telegram.ext import Updater, MessageHandler, CommandHandler, Filters
 
-# OpenAI API credentials
-openai.api_key="HERE-YOUR-OPEN-API-TOKEN"
-# Telegram Bot API credentials
-token = "HERE-YOUR-TELEGRAM-API-KEY"
+def start(update: Update, context):
+    context.user_data['ignored'] = False
+    update.message.reply_text("Started listening to messages")
 
-async def hello(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    await update.message.reply_text(f'Hello {update.effective_user.first_name}')
+def stop(update: Update, context):
+    context.user_data['ignored'] = True
+    update.message.reply_text("Stopped listening to messages")
 
-async def ask(update, context):
-    # Get the user's message
-    message = update.message.text.split(" ", 1)[1]
-    print(message)
-    # Use OpenAI to generate a response
+def clear(update: Update, context):
+    context.user_data.clear()
+    update.message.reply_text("History cleared")
+
+def respond(update: Update, context):
+    if 'ignored' in context.user_data and context.user_data['ignored']:
+        return
+
+    openai.api_key = "YOUR_OPENAI_API_KEY"
+    model_engine = "text-davinci-003"
+    prompt = f"{' '.join(context.user_data.get('history', []))} {update.message.text}"
+
     response = openai.Completion.create(
-        model="text-davinci-003",
-        prompt=f"{message}",
+        engine=model_engine,
+        prompt=prompt,
         max_tokens=2048,
         n=1,
         stop=None,
         temperature=0.5,
     ).choices[0].text
 
-    await update.message.reply_text(f'Response {response}')
+    context.user_data['history'] = context.user_data.get('history', []) + [update.message.text, response]
+    update.message.reply_text(response)
 
-app = ApplicationBuilder().token(token).build()
-app.add_handler(CommandHandler("hello", hello))
-app.add_handler(CommandHandler("ask", ask))
-app.run_polling()
+def main():
+    openai.api_key = "YOUR_OPENAI_API_KEY"
+    updater = Updater("YOUR_TELEGRAM_BOTFATHER_TOKEN", use_context=True)
+
+    dp = updater.dispatcher
+    dp.add_handler(CommandHandler("start", start))
+    dp.add_handler(CommandHandler("stop", stop))
+    dp.add_handler(CommandHandler("clear", clear))
+    dp.add_handler(MessageHandler(Filters.text, respond))
+
+    updater.start_polling()
+    updater.idle()
+
+if __name__ == '__main__':
+    main()
