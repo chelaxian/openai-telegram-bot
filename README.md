@@ -17,17 +17,24 @@ Next, go to https://beta.openai.com/account/api-keys and create a new secret key
 ## CHANGE A CODE USING THESE ACCESS keys
 Finally, open the file server.py in a text editor and insert your API keys in the designated places:
  - line 7 - open api key between " "
- - line 10 - telegram token between " "
+ - line 10 - telegram token between ' '
  - line 15 - your auth password " "
 
 ## RUN server.py on your server
     python3 server.py
 
 ## TRY CHATTING WITH GPT3
-    /auth - Login to Bot to get access to chating
-    /start - Start listening and answering to messages
-    /stop - Stop listening and answering to messages
-    /clear - History clearing and starting over
+    "/auth + password" - Login to Bot to get access to chating
+    "/ask + prompt" - Ask any question to Bot
+    "/start" - Allow Bot to be asked by you
+    "/stop" - Forbid Bot to be asked by you
+    "/clear" - History clearing (drop previous context) and starting new chat
+    
+Remember that ChatBot works with all users individually. If you add it to group chat, all users who want to interract with it have to do same "auth + start" procedure before they can "ask" it anything.
 
-Example:    
-write a tweet about why is important to have work-life-balance
+Examples:
+/auth P@ssword
+/start
+/ask write a tweet about why is important to have work-life-balance
+/clear
+/stop
