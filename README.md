@@ -41,7 +41,7 @@ Theb, open the file telegram-bot-dalle.py in a text editor and insert your API k
     "/auth + password" - Login to Bot to get access to chating
     "/img + prompt" - Describe to Bot what you want to draw
     
-Remember that ChatBot works with all users individually. If you add it to group chat, all users who want to interract with it have to do same "auth + start" procedure before they can "ask" it anything.
+Remember that ChatBot works with all users individually. If you add it to group chat, all users who want to interract with it have to do same "auth + start" procedure before they can "ask/img" it anything.
 
 Examples for telegram-bot-chatgpt:
 /auth P@ssword
