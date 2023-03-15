@@ -8,7 +8,7 @@
 
 3. You will then receive a token to access the HTTP API.
 
-4. Repeat step 1-3 for second bot (you will need 2 separate bots)
+4. Repeat steps 1-3 for second bot (you will need 2 separate bots)
 
 
 ## OPEN API -GETTING ACCESS KEY
