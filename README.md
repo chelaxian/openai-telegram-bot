@@ -37,19 +37,20 @@ Theb, open the file telegram-bot-dalle.py in a text editor and insert your API k
     "/stop" - Forbid Bot to be asked by you
     "/clear" - History clearing (drop previous context) and starting new chat
     
-## TRY CHATTING WITH telegram-bot-dalle
-    "/auth + password" - Login to Bot to get access to chating
-    "/img + prompt" - Describe to Bot what you want to draw
-    
-Remember that ChatBot works with all users individually. If you add it to group chat, all users who want to interract with it have to do same "auth / auth + start" procedure before they can "ask / img" it anything.
-
 Examples for telegram-bot-chatgpt:
 /auth P@ssword
 /start
 /ask write a tweet about why is important to have work-life-balance
 /clear
 /stop
-
+    
+## TRY CHATTING WITH telegram-bot-dalle
+    "/auth + password" - Login to Bot to get access to chating
+    "/img + prompt" - Describe to Bot what you want to draw
+    
 Examples for telegram-bot-dalle:
 /auth P@ssword
 /img beautiful red cat in garden
+
+
+Remember that ChatBot works with all users individually. If you add it to group chat, all users who want to interract with it have to do same "auth / auth + start" procedure before they can "ask / img" it anything.
