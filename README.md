@@ -32,9 +32,9 @@ Install via your packet manager python3, python3-pip
 ```
 sudo apt-get install python3 python3-pip
 ```
-Install via pip modules openai, telegram, telegram.ext, logging, requests
+Install via pip modules openai, python-telegram-bot, python-telegram-bot[ext], logging, requests
 ```
-sudo pip install openai telegram telegram.ext logging requests
+sudo pip install openai python-telegram-bot python-telegram-bot[ext] logging requests
 ```
 Run python script on your server:
 
