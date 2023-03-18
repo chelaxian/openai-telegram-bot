@@ -29,7 +29,14 @@ Theb, open the file telegram-bot-dalle.py in a text editor and insert your API k
 ## RUN server.py on your server
 
 Install via your packet manager python3, python3-pip
-Install via pip modules openai, telebot
+```
+sudo apt-get install python3 python3-pip
+```
+Install via pip modules openai, telegram, telegram.ext, logging, requests
+```
+sudo pip install openai telegram telegram.ext logging requests
+```
+Run python script on your server:
 
     python3 telegram-bot-chatgpt.py > outputfile_for_stdout &
     python3 telegram-bot-dalle.py > outputfile_for_stdout &
