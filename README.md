@@ -27,6 +27,10 @@ Theb, open the file telegram-bot-dalle.py in a text editor and insert your API k
  - line 15 - your auth password " "
  
 ## RUN server.py on your server
+
+Install via your packet manager python3, python3-pip
+Install via pip modules openai, telebot
+
     python3 telegram-bot-chatgpt.py > outputfile_for_stdout &
     python3 telegram-bot-dalle.py > outputfile_for_stdout &
 
