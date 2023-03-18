@@ -29,10 +29,12 @@ Theb, open the file telegram-bot-dalle.py in a text editor and insert your API k
 ## RUN server.py on your server
 
 Install via your packet manager python3, python3-pip
+example (Ubuntu):
 ```
 sudo apt-get install python3 python3-pip
 ```
 Install via pip modules openai, python-telegram-bot, python-telegram-bot[ext], requests
+example (Ubuntu):
 ```
 sudo pip install openai python-telegram-bot python-telegram-bot[ext] requests
 ```
