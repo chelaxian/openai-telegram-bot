@@ -19,22 +19,6 @@ def auth(update: Update, context: CallbackContext):
     else:
         update.message.reply_text("Incorrect password!")
 
-# Start handling messages
-def start(update: Update, context: CallbackContext):
-    if context.user_data['authorized'] == True:
-        context.user_data['ignore'] = False
-        update.message.reply_text("I start listening to messages and replying to them.")
-    else: 
-        update.message.reply_text("\nFirst you need to pass authorization!")
-
-# Stop handling messages
-def stop(update: Update, context: CallbackContext):
-    if context.user_data['authorized'] == True:
-        context.user_data['ignore'] = True
-        update.message.reply_text("I no longer listen to messages and do not answer them.")
-    else: 
-        update.message.reply_text("First you need to pass authorization!")
-
 # Clear history of messages
 def clear(update: Update, context: CallbackContext):
     if context.user_data['authorized'] == True:
@@ -102,15 +86,11 @@ def img(update: Update, context: CallbackContext):
         update.message.reply_text("This request is prohibited by OpenAi policy.")
 
 auth_handler = CommandHandler('auth', auth)
-start_handler = CommandHandler('start', start)
-stop_handler = CommandHandler('stop', stop)
 clear_handler = CommandHandler('clear', clear)
 ask_handler = CommandHandler('ask', ask)
 img_handler = CommandHandler('img', img)
 
 dispatcher.add_handler(auth_handler)
-dispatcher.add_handler(start_handler)
-dispatcher.add_handler(stop_handler)
 dispatcher.add_handler(clear_handler)
 dispatcher.add_handler(ask_handler)
 dispatcher.add_handler(img_handler)
