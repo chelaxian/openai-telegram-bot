@@ -49,9 +49,6 @@ def ask(update: Update, context: CallbackContext):
         update.message.reply_text("First you need to pass authorization!")
         return
 
-    context.user_data['history']Продолжение кода:
-
-```python
     context.user_data['history'] = context.user_data.get('history', []) + [update.message.text.replace('/ask ', '')]
     prompt = ' '.join(context.user_data['history'])
 
