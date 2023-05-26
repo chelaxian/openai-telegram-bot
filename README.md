@@ -38,7 +38,7 @@ Install via pip modules openai, python-telegram-bot, python-telegram-bot[ext], r
 
 example (Ubuntu):
 ```
-sudo pip install openai python-telegram-bot python-telegram-bot[ext] requests
+sudo pip install openai python-telegram-bot==13.7 python-telegram-bot[ext]==13.7 requests
 ```
 Run python script on your server:
 
